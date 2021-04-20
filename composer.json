@@ -24,6 +24,7 @@
         "friendsofphp/php-cs-fixer": "^2"
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit ."
+        "test": "./vendor/bin/phpunit .",
+        "phpcs": "./vendor/bin/php-cs-fixer fix --dry-run"
     }
 }
