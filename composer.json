@@ -22,5 +22,8 @@
         "phpunit/phpunit": "^9.5",
         "symfony/test-pack": "^1.0",
         "friendsofphp/php-cs-fixer": "^2"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit ."
     }
 }
