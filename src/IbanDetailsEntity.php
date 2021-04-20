@@ -9,5 +9,7 @@ class IbanDetailsEntity
     public ?string $bic = null;
     public ?string $bankName = null;
 
-    public function __construct(public string $iban, public bool $isValid) {}
+    public function __construct(public string $iban, public bool $isValid)
+    {
+    }
 }
