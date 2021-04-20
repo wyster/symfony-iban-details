@@ -26,15 +26,14 @@ class IbanCodes implements ProviderInterface
         $t = new Crawler($content);
         $resultNode = $t->filterXPath('//legend[contains(., "Result")]');
 
-        $entity = new IbanDetailsEntity();
         if (!$resultNode->count()) {
             throw new \RuntimeException('Result node not found');
         }
 
         $resultContent = $resultNode->closest('fieldset')->html();
 
-        $entity->isValid = str_contains($content, 'This is a valid IBAN');
-        $entity->iban = $iban;
+        $isValid = str_contains($content, 'This is a valid IBAN');
+        $entity = new IbanDetailsEntity($iban, $isValid);
         $bicMatches = [];
         preg_match('/BIC:<\/b>\s([a-z0-9]+)/ui', $resultContent, $bicMatches);
         if (\count($bicMatches)) {
