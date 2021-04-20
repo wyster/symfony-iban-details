@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <!--
+        This website is powered by TYPO3 - inspiring people to share!
+        TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+        TYPO3 is copyright 1998-2017 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+        Information and contribution at http://typo3.org/
+    -->
+
+
+
+    <title>Validate an IBAN</title>
+    <meta name="generator" content="TYPO3 CMS">
+    <meta name="description" content="IBAN Calculator: lets you convert a national account number into an IBAN, validate an IBAN, find bank information. Correctness guaranteed.">
+    <meta name="keywords" content="IBAN, BIC, sort code, bank, calculator, validator, validate, IBAN conversion, lookup, lookup IBAN">
+    <meta name="author" content="Dr. Rainer Typke + Dr. Agatha Walczak-Typke">
+    <meta name="robots" content="index, follow">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="imagetoolbar" content="false">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" href="https://iban-4199.kxcdn.com/cdn/bootstrap/3.4.1/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="https://iban-4199.kxcdn.com/cdn/css/custom.css"><!-- Consent Tool for www.ibancalculator.com-->
+    <script type="text/javascript">!function(){var e=function(){var e,t="__tcfapiLocator",a=[],n=window;for(;n;){try{if(n.frames[t]){e=n;break}}catch(e){}if(n===window.top)break;n=n.parent}e||(!function e(){var a=n.document,r=!!n.frames[t];if(!r)if(a.body){var i=a.createElement("iframe");i.style.cssText="display:none",i.name=t,a.body.appendChild(i)}else setTimeout(e,5);return!r}(),n.__tcfapi=function(){for(var e,t=arguments.length,n=new Array(t),r=0;r<t;r++)n[r]=arguments[r];if(!n.length)return a;if("setGdprApplies"===n[0])n.length>3&&2===parseInt(n[1],10)&&"boolean"==typeof n[3]&&(e=n[3],"function"==typeof n[2]&&n[2]("set",!0));else if("ping"===n[0]){var i={gdprApplies:e,cmpLoaded:!1,cmpStatus:"stub"};"function"==typeof n[2]&&n[2](i)}else a.push(n)},n.addEventListener("message",(function(e){var t="string"==typeof e.data,a={};try{a=t?JSON.parse(e.data):e.data}catch(e){}var n=a.__tcfapiCall;n&&window.__tcfapi(n.command,n.version,(function(a,r){var i={__tcfapiReturn:{returnValue:a,success:r,callId:n.callId}};t&&(i=JSON.stringify(i)),e.source.postMessage(i,"*")}),n.parameter)}),!1))};"undefined"!=typeof module?module.exports=e:e()}();</script>
+    <script>window._sp_={config:{accountId:1061,wrapperAPIOrigin:"https://wrapper-api.sp-prod.net/tcfv2",mmsDomain:"https://consent.ibancalculator.com"}}</script>
+    <script src="https://gdpr-tcfv2.sp-prod.net/wrapperMessagingWithoutDetection.js"></script>
+
+    <script defer id="__lxGc__rtr" type="text/javascript" src="//s.clickiocdn.com/t/201928/360.js"></script>
+
+    <!--script type="text/javascript" src="https://drnsvfsk38vm6.cloudfront.net/cdn/consent_201928.php"    /script-->
+    <!--script defer type="text/javascript" src="//clickio.mgr.consensu.org/t/consent_201928.js"></script>
+
+    <script>
+    (function () {
+        var inputsSelector = 'input[type=text]';
+        var inputsEvents   = ['keyup', 'click', 'submit', 'paste', 'dblclick'];
+
+        var inputConsentHandler = function () {
+            var inputsArr = Array.prototype.slice.call(document.querySelectorAll(inputsSelector));
+            inputsArr.map(function (inp) {
+                inputsEvents.forEach(function (ev) {
+                    inp.addEventListener(ev, window['__lxG__consent__']['acceptConsent'], false);
+                });
+            });
+        };
+
+        var inputHandlersSet        = false;
+        window['__lxG__consent__']  = window['__lxG__consent__'] || {};
+        var originalConsentCallback = window['__lxG__consent__']['consentCallback'];
+
+        var consentCallback = function (consent) {
+            if (consent === -1
+                && !inputHandlersSet) {
+                inputHandlersSet = true;
+                inputConsentHandler();
+            }
+
+            if (originalConsentCallback) {
+                originalConsentCallback(consent);
+            }
+        };
+
+        window['__lxG__consent__']['consentCallback'] = consentCallback;
+    })();
+    </script--><meta name="google-site-verification" content="dPIecwOWdht0SRv_Cs-9wV17On2Y10w6Eur5gAjp5nk"/><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <script src="https://iban-4199.kxcdn.com/cdn/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <script defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-6778158074239566",enable_page_level_ads:true});</script>
+    <script type="text/javascript">function reposition_skies(){var pageWrapper=jQuery("#langwrapper");var contentWidth=Math.floor(jQuery(pageWrapper).innerWidth());var contentPadding=parseInt(jQuery("#langwrapper").offset().left);var adlWallPaperLeft=contentWidth+contentPadding;var offsetLeft=Math.floor(adlWallPaperLeft);if(offsetLeft<contentWidth){offsetLeft=pageWrapper;}jQuery("#mso_sky").css("position","absolute").css("top","20px").css("left",offsetLeft);}var resizeTimer='';if(window.attachEvent){window.attachEvent("resize",function(){clearTimeout(resizeTimer);resizeTimer=setTimeout(reposition_skies,200);});}else if(window.addEventListener){window.addEventListener("resize",function(){clearTimeout(resizeTimer);resizeTimer=setTimeout(reposition_skies,200);});}</script><!--script async='async' src='https://www.googletagservices.com/tag/js/gpt.js' /script-->
+    <script defer src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+    <script>var googletag=googletag||{};googletag.cmd=googletag.cmd||[];</script>
+
+
+    <script defer type="text/javascript" src="//s.clickiocdn.com/t/common_258.js"></script>
+
+
+    <script>googletag.cmd.push(function(){var mappingSky=googletag.sizeMapping().addSize([1520,1],[[120,600],[160,600],[300,600]]).addSize([0,0],[]).build();googletag.enableServices();});</script><style type="text/css">body .btn-secondary{background-color:#00b9ff;border-color:#00b9ff;color:#fff}body .btn-secondary:hover,body .btn-secondary:focus{border-color:#337ab7;background-color:#337ab7;color:#fff}body .btn-secondary:active,body .btn-secondary:visited,body .btn-secondary:active:focus,body .btn-secondary:active:hover{border-color:#00b9ff;background-color:#00b9ff;color:#fff}body .btn-info{background-color:#6ec0e6;border-color:#6ec0e6;color:#fff}body .btn-info:hover,body .btn-info:focus{border-color:#337ab7;background-color:#337ab7;color:#fff}body .btn-info:active,body .btn-info:visited,body .btn-info:active:focus,body .btn-info:active:hover{border-color:#6ec0e6;background-color:#6ec0e6;color:#fff}</style><script data-ad-client="ca-pub-7351608356042114" defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- this is server http1-2 -->
+
+
+</head>
+<body>
+
+
+
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXCVBDR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--div style="text-align:center; margin-left:auto; margin-right:auto">
+<script type="text/javascript">var tsMrk = 'O20pdww("Leaderboard2")';</script>
+
+<span class='O20pdww_end'></span>
+</div-->
+
+<br/>
+
+
+<div class="container-fluid"><div class="row row-centered"><div class="col-lg-10">
+
+    <div class="container img-rounded" id="contentshell">
+        <div class="row row-centered">
+
+
+
+            <div id="langwrapper" class="container img-rounded">
+                <div id="lang">
+                    <div class="liquidlangtop-left"></div>
+                    <div class="liquidlangtop-right"></div>
+                    <div class="liquidlanginsideleft">
+                        <div class="liquidlanginsideright">
+                            <div class="liquidlanginside">
+                                <p class="liquidlangnotopgap">
+                                    <a href="https://www.iban-rechner.de/iban_validieren.html?&tx_valIBAN_pi1%5Biban%5D=GB33BUKB20201555555555&tx_valIBAN_pi1%5Bfi%5D=fi" title="Diese Seite auf deutsch">DE</a><span class="orangebullet">&nbsp;&diams;&nbsp;</span><a class="on">EN</a><span class="orangebullet">&nbsp;&diams;&nbsp;</span><a href="https://es.ibancalculator.com/iban_validieren.html?&tx_valIBAN_pi1%5Biban%5D=GB33BUKB20201555555555&tx_valIBAN_pi1%5Bfi%5D=fi" title="Espa&ntilde;ol">ES</a><span class="orangebullet">&nbsp;&diams;&nbsp;</span><a href="https://it.ibancalculator.com/iban_validieren.html?&tx_valIBAN_pi1%5Biban%5D=GB33BUKB20201555555555&tx_valIBAN_pi1%5Bfi%5D=fi" title="Italiano">IT</a><span class="orangebullet">&nbsp;&diams;&nbsp;</span><a href="https://nl.ibancalculator.com/iban_validieren.html?&tx_valIBAN_pi1%5Biban%5D=GB33BUKB20201555555555&tx_valIBAN_pi1%5Bfi%5D=fi" title="Deze pagina in het Nederlands">NL</a><span class="orangebullet">&nbsp;&diams;&nbsp;</span><a href="https://pl.ibancalculator.com/iban_validieren.html?&tx_valIBAN_pi1%5Biban%5D=GB33BUKB20201555555555&tx_valIBAN_pi1%5Bfi%5D=fi" title="Polski">PL</a><span class="orangebullet">&nbsp;&diams;&nbsp;</span><a href="https://zh.ibancalculator.com/iban_validieren.html?&tx_valIBAN_pi1%5Biban%5D=GB33BUKB20201555555555&tx_valIBAN_pi1%5Bfi%5D=fi" title="Mandarin (simplified)">中文</a>
+                                </p>
+                                <p class="liquidlangnobottomgap"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="liquidlangbottom-left"></div>
+                    <div class="liquidlangbottom-right"></div>
+                </div><!-- CLOSE #lang-->
+            </div><!-- cloas #langwrapper-->
+
+
+            <div style="display:inline; float:left;  padding: 0 0 0 5px;">
+                <a class="navbar-brand" href="/"><script data-pagespeed-no-defer>//<![CDATA[
+                (function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://iban.codes/iban_validieren.html?&no_cache=1&tx_valIBAN_pi1%5biban%5d=GB33BUKB20201555555555&tx_valIBAN_pi1%5bfi%5d=fi','nXzXivl0t7',true,false,'G2xZxBZFcPI');
+                //]]></script><img src="https://iban-4199.kxcdn.com/cdn/img/rect3849.png" alt="Home" data-pagespeed-url-hash="3128173916" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/></a>
+            </div>
+            <div style="margin-left:120px; margin-right:10px">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid" id="mainNavig">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                            <ul class="nav  navbar-nav"><li><a title="IBAN conversion or validation, BIC search" href="iban_berechnen_bic.html" class="iban_berechnen_bicon">Find</a></li><li><a title="In case of an incorrectly calculated IBAN, we cover up to 25 EUR" href="guarantee.html" class="guarantee">Guarantee</a></li><li><a title="frequently asked questions" href="faq.html" class="faq">FAQ</a></li><li><a title="Contact information" href="contact.html" class="contact">About</a></li><li><a title="A description of what data are collected, why, and how long they are stored" href="privacy.html" class="privacy">Privacy</a></li></ul>
+
+                        </div><!--
+              /.navbar-collapse
+              /-->
+
+
+
+
+                        <div class="img-rounded" id="subnavrounded">
+
+
+                            <div id="subNav">
+
+                                <div class="subNavLinks">
+
+                                    <div class="tx-subnav-pi1">
+                                        <a href="bic_und_iban.html" title="Determine the international bank account number (IBAN) based on the sort code (bank code) and account number or national equivalent. For some countries, the BIC is shown as well." class="subNavLinks">Calculate an IBAN</a> <span class="orangepipe">&#124;</span>
+                                        <a href="iban_validieren.html" title="For some countries, we check not just the IBAN checksum, but also the validity of the bank code and account numbers that are contained in the IBAN." class="subNavLinks">Check an IBAN</a> <span class="orangepipe">&#124;</span>
+                                        <a href="validate_account_no.html" title="Check whether the checksum inside an account number is correct." class="subNavLinks">Check account number</a> <span class="orangepipe">&#124;</span>
+                                        <a href="blz.html" title="You can either enter the bank name and city to determine the bank code (or sort code) and BIC, or you can enter the sort code and find out the bank name, city, and BIC." class="subNavLinks">Find bank/bank code/BIC</a> <span class="orangepipe">&#124;</span>
+                                        <a href="eu_ueberweisung_pdf.html" title="" class="subNavLinks">EU transfer</a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div><!--
+            /.container-fluid
+            /-->
+                </nav>
+
+            </div> <!-- div with margin-left -->
+
+        </div> <!-- row? -->
+
+
+
+
+
+
+
+        <div class="row row-eq-height ">
+            <div class="col-md-6 col-md-push-6 img-rounded greybordernotleft">
+                <div style="text-align:center; margin-left:auto; margin-right:auto">
+
+                    <!-- ctx. Production/http1_2, lang en, therefore ad E for /1058773/EN_DFP_300x250_tag--> <br/>   <!-- code from Primis - ibancalculator.com_ NVU Validation -->
+                    <script type="text/javascript" language="javascript" src="https://live.sekindo.com/live/liveView.php?s=95384&cbuster=[CACHE_BUSTER]&pubUrl=[PAGE_URL_ENCODED]&subId=[SUBID_ENCODED] data-track-content data-content-name=" Primis ibancalculator.com_ NVU Validation"></script>
+                    <!-- code from Primis -->
+                    <br/>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-md-pull-6 img-rounded greyborder">
+
+
+                <h1>Check IBAN / show more information</h1><div class="tx-valIBAN-pi1">
+                <fieldset><legend>You entered:</legend><p><b>IBAN to check:</b> GB33BUKB20201555555555</p></fieldset>
+                <fieldset><legend>Checks</legend><table><tr><td valign="top"><img src="data:image/gif;base64,R0lGODlhEAAQAIABAADMAP///yH5BAEKAAEALAAAAAAQABAAAAIhjI8HkG3LHIJy0hpgxJcv/HSVOCmfc5GmtqGspzYaGGIFADs=" alt="+" data-pagespeed-url-hash="4186650964" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></td><td><p>This IBAN has the correct length for this country (GB).</p></td></tr><tr><td valign="top"><img src="data:image/gif;base64,R0lGODlhEAAQAIABAADMAP///yH5BAEKAAEALAAAAAAQABAAAAIhjI8HkG3LHIJy0hpgxJcv/HSVOCmfc5GmtqGspzYaGGIFADs=" alt="+" data-pagespeed-url-hash="4186650964" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></td><td><p>Bankleitzahl (bank code) 202015: This Bankleitzahl (bank code) is correct.</p></td></tr><tr><td valign="top"><img src="data:image/gif;base64,R0lGODlhEAAQAIABAADMAP///yH5BAEKAAEALAAAAAAQABAAAAIhjI8HkG3LHIJy0hpgxJcv/HSVOCmfc5GmtqGspzYaGGIFADs=" alt="+" data-pagespeed-url-hash="4186650964" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></td><td><p>Account number 55555555: The account number contains a valid checksum.</p></td></tr><tr><td valign="top"><img src="data:image/gif;base64,R0lGODlhEAAQAIABAADMAP///yH5BAEKAAEALAAAAAAQABAAAAIhjI8HkG3LHIJy0hpgxJcv/HSVOCmfc5GmtqGspzYaGGIFADs=" alt="+" data-pagespeed-url-hash="4186650964" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></td><td><p>IBAN GB33BUKB20201555555555: The IBAN checksum is correct.</p></td></tr></table></fieldset>
+                <fieldset><legend>Result</legend><p><b>This is a valid IBAN.</b></p><p><b>IBAN:</b> GB33BUKB20201555555555&nbsp;&nbsp;&nbsp;<button class="js-copy-iban-btn">IBAN into the clipboard</button></p><p><b>BIC:</b> BUKBGB22&nbsp;&nbsp;&nbsp;<button class="js-copy-bic-btn">BIC into the clipboard</button></p>
+                    <script type="text/javascript">function copyTextToClipboard(text){var textArea=document.createElement("textarea");textArea.style.position='fixed';textArea.style.top=0;textArea.style.left=0;textArea.style.width='2em';textArea.style.height='2em';textArea.style.padding=0;textArea.style.border='none';textArea.style.outline='none';textArea.style.boxShadow='none';textArea.style.background='transparent';textArea.value=text;document.body.appendChild(textArea);textArea.select();try{var successful=document.execCommand('copy');var msg=successful?'successful':'unsuccessful';console.log('Copying text command was '+msg);}catch(err){console.log('Oops, unable to copy');alert('Sorry, but copying did not work. Please highlight and copy the text manually.');}document.body.removeChild(textArea);}var copyBicBtn=document.querySelector('.js-copy-bic-btn'),copyIbanBtn=document.querySelector('.js-copy-iban-btn');copyBicBtn.addEventListener('click',function(event){copyTextToClipboard('BUKBGB22');});copyIbanBtn.addEventListener('click',function(event){copyTextToClipboard('GB33BUKB20201555555555');});</script>
+                    <p><b>Bank:</b> BARCLAYS BANK UK PLC</p><p>Leicester LE87 2BB</p><p><b>SEPA Credit Transfer is supported.</b></p><p><b>SEPA Direct Debit is supported.</b></p><p><b>B2B is supported.</b></p><p><font color="black"><b>SEPA Instant Credit Transfer is <i>not</i> supported.</b></font></p><div class="alert alert-info" role="alert"><p><b>This IBAN can be found (or could be found) online, for everyone to see, e. g. here:</b><br/><a href="https://pt.iban.com/testibans" target="_blank">https://pt.iban.com/testibans</a><br/>Alexa Rank: <a href="https://www.alexa.com/siteinfo/pt.iban.com" target="_blank">132993</a></p></div><p><font size="1">Data valid as of: 12. 4. 2021 (April 12, 2021).</font></p>
+                </fieldset><br/><form role="form" action="iban_validieren.html" method="post">
+                <input type="hidden" name="no_cache" value="1"/>
+                <!-- unset --><button type="submit" class="btn btn-primary" name="Action" value="Validate another IBAN" title=" Validate another IBAN ">Validate another IBAN</button>
+                <a class="btn btn-secondary" href="https://currencyfair.pxf.io/c/1230117/440784/5170?sharedid=RMNEK1" role="button">Best EUR to GBP Rates &gt;</a>
+                <a class="btn btn-secondary" href="https://prf.hn/l/7AVX3z5" role="button">Money transfer</a>
+
+                <br/><br/>
+            </form><p><fieldset><table><tr><td style="padding:4px"><a href="https://currencyfair.pxf.io/c/1230117/440784/5170?sharedid=RMNEK1"><img src="//iban-4199.kxcdn.com/cdn/img/blobs.png" width="28" height="48" data-pagespeed-url-hash="1405461719" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/></a></td><td style="padding:4px">Send money with a better exchange rate and avoid excessive bank fees. CurrencyFair is up to 8x cheaper than the banks. PLUS Get 3 Free transfers today! <a href="https://currencyfair.pxf.io/c/1230117/440784/5170?sharedid=RMNEK1">Learn more.</a></td></table></fieldset><a href="http://www.iban-bic.com/soap0.html?L=" target="_top">Integrate IBAN validation into your own software or website </a><br/><a href="/gb/printable.php?h=2e160642df95cf3dd0fd24cc3a3a7d82"><img src="data:image/webp;base64,UklGRpwBAABXRUJQVlA4IJABAABQCQCdASowACwAPm0skEakIiGhLjgLMIANiWkA0lTY3AG4BpMmmvQD6LvoAId1DFomZrM0ZiEIDzFHB/kgc7nKX7tM04UY2SGCXw9ZjNtEd5QjwAD+/0/8dO/EQX30gmPnX/1K7q1+s4TcM+wFKzC84oL1g7tKruNLwNSKDCacAU3GpkunBuDdm+r+VIa4rIel19ADv0TUmABLlOPZveJPLMRHZh7P/+uWOT+/sqT+7hGriStAcdrAOjk32RymhQ1cJKnaUTDzzfITXxLtkwVS+UlHKkgfje+nmi64LIQPI7H7SqwDvLFuBOSvNcHDE55sTGRmpSbE1u0Wd/FUStJWIWY4jpAbEiy31m0Yg6t+NMaELh6EaCU31VBjKZC5S+IjqL9uR7KC86cxAe6uM++4TLwX39pb5M2oTEKdvSy5fFhyBI+8q7Gnj265YZuzSDbUjSQFjleuAYIK6FtBQzRxEByPZl4e0s+ldvURFe0G5St8QNxLkGbXKYmkSeEzxMIVaRN9fjp8olrqpuugAAAA" alt="" data-pagespeed-url-hash="1366620550" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">View this result in a printer-friendly form</a><br/><a href="/validate/GB33BUKB20201555555555">Link to this result:</a><br/>https://iban.codes/validate/GB33BUKB20201555555555<!-- 127.0.0.1 seems to be your address -->
+            </div>
+
+            </div>
+        </div>
+
+
+        <div class="row row-eq-height ">
+            <div class="col-md-12 img-rounded greyborder  hidden-xs">
+                <div style="text-align:center; margin-left:auto; margin-right:auto; min-height:270px">
+                    <h2>Premium Version</h2><p>Ideal for corporate clients:</p><ul><li><b>Mass Calculations:</b> Process a whole CSV file at once.</li>
+                    <li><a href="https://en.iban-bic.com/withoutsoap.html" target="_blank">REST Interface.</a></li>
+                    <li>Secure SSL connection.</li>
+                    <li>Try mass calculations or the SOAP interface for free using the <b>Welcome Bonus Points</b>.</li>
+                    <p>&nbsp;</p></ul><p><a href="https://en.iban-bic.com" target="_blank"><b>Premium registration...</b></a></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!-- /container -->
+
+
+
+
+</div> <!-- /col -->
+
+    <!-- /col-lg -->
+</div>
+</div>  <!-- /row /container-fluid -->
+
+
+
+
+<div style="text-align: center; color: #fff; padding: 5px 0px 0px 0px;">
+
+    <div id="footer">
+        <!-- ###footer###-->
+        <br/>Copyright &copy; 2004-2020 Theano GmbH <!--div  style="color: #fff;"><a href="http://www.theano.de/">Theano GmbH</a></div-->
+    </div>
+
+</div>
+
+
+
+
+
+
+<!--div id="mso_sky"-->
+
+
+<!-- /1058773/mso_sky -->
+<!--div id='div-gpt-ad-1614945493184-0'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1614945493184-0'); });
+</script>
+</div>
+
+
+</div-->
+<!-- mso-->
+<script type="text/javascript">reposition_skies();</script>
+
+
+
+<!-- Matomo -->
+<script type="text/javascript">var _paq=window._paq||[];_paq.push(["setCookieDomain","*.ibancalculator.com"]);_paq.push(['setCustomDimension',1,'http1_2']);_paq.push(['trackPageView']);_paq.push(['trackAllContentImpressions']);_paq.push(['enableLinkTracking']);(function(){var u="//pw.ibanbic.com/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','3']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.defer=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();</script>
+<!-- End Matomo Code -->
+
+<!-- Piwik 2 -->
+
+
+
+
+</body>
+</html>

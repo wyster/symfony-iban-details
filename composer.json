@@ -1,0 +1,25 @@
+{
+    "name": "wyster/symfony-iban-details",
+    "description": "IBAN details",
+    "authors": [
+        {
+            "name": "Illia Zelenin",
+            "email": "wyster@make.im"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8",
+        "symfony/http-client": "^5",
+        "symfony/dom-crawler": "^5"
+    },
+    "autoload": {
+        "psr-4": {
+            "IbanDetails\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "symfony/test-pack": "^1.0"
+    }
+}
