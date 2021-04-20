@@ -37,12 +37,12 @@ class IbanCodes implements ProviderInterface
         $entity->iban = $iban;
         $bicMatches = [];
         preg_match('/BIC:<\/b>\s([a-z0-9]+)/ui', $resultContent, $bicMatches);
-        if (count($bicMatches)) {
+        if (\count($bicMatches)) {
             $entity->bic = strip_tags($bicMatches[1]);
         }
         $bankNameMatches = [];
         preg_match('/Bank:<\/b>\s(.*?)<\/p>/ui', $resultContent, $bankNameMatches);
-        if (count($bankNameMatches)) {
+        if (\count($bankNameMatches)) {
             $entity->bankName = $bankNameMatches[1];
         }
 
